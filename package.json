@@ -1,0 +1,74 @@
+{
+  "name": "deskvideosys",
+  "version": "1.0.0",
+  "description": "DeskVideosys Open Source Media Server",
+  "main": "index.js",
+  "scripts": {
+    "build:ico": "rsrc -arch amd64 -ico cbr.ico -o DeskVideosys_windows.syso",
+    "build:www": "cd web_src && npm run build && cd .. && apidoc -i routers -o www/apidoc",
+    "build:doc": "apidoc -i routers -o www/apidoc",
+    "build:win": "go build -tags release -ldflags \"-s -w\" -o DeskVideosys.exe",
+    "build:lin": "go build -tags release -ldflags \"-X 'main.buildDateTime=$(date '+%Y-%m-%d %H:%M:%S')' -X 'main.gitCommitCode=$(git rev-list --full-history --all --abbrev-commit --max-count 1)' -s -w\" -o deskvideosys",
+    "build:dev": "go build -o DeskVideosys.exe",
+    "dev": "go build -o DeskVideosys.exe",
+    "dev:lin": "go build -o deskvideosys",
+    "dev:www": "cd web_src && npm run start",
+    "clean": "rimraf DeskVideosys.exe DeskVideosys.exe~ deskvideosys"
+  },
+  "apidoc": {
+    "name": "DeskVideosys",
+    "title": "DeskVideosys API Reference",
+    "order": [
+      "stats",
+      "Pushers",
+      "Players",
+      "stream",
+      "StreamStart",
+      "StreamStop",
+      "record",
+      "RecordFolders",
+      "RecordFiles",
+      "sys",
+      "Login",
+      "Logout",
+      "GetUserInfo",
+      "ModifyPassword",
+      "GetServerInfo"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pack": [
+    {
+      "name": "DeskVideosys-windows",
+      "format": "zip",
+      "pattern": "{www/**,DeskVideosys.exe,ServiceInstall-DeskVideosys.exe,ServiceUninstall-DeskVideosys.exe,deskvideosys.ini}",
+      "options": {
+        "dot": true,
+        "ignore": [
+          "*.log"
+        ]
+      }
+    },
+    {
+      "name": "DeskVideosys-linux",
+      "format": "tar",
+      "pattern": "{www/**,deskvideosys,deskvideosys.ini,*.sh}",
+      "options": {
+        "dot": true,
+        "ignore": [
+          "*.log"
+        ]
+      }
+    }
+  ],
+  "devDependencies": {
+    "@liveqing/liveplayer": "^2.1.8",
+    "copy-webpack-plugin": "^6.2.1"
+  },
+  "dependencies": {
+    "easy-player": "^2.2.7",
+    "videojs-contrib-hls": "^5.15.0"
+  }
+}
