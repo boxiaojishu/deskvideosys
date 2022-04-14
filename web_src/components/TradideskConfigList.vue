@@ -6,7 +6,7 @@
                 <h4 class="text-success text-center">配置桌面列表</h4>           
                 <form class="form-inline">
                   <div class="form-group">
-                      <button type="button" class="btn btn-sm btn-success" @click.prevent="$refs['TradideskConfigDlg'].show()"><i class="fa fa-plus"></i>添加传统桌面</button>
+                      <button type="button" class="btn btn-sm btn-success" @click.prevent="$refs['TradideskConfigDlg'].show()"><i class="fa fa-plus"></i>添加桌面</button>
                   </div>                  
                   <div class="form-group pull-right">
                       <div class="input-group">
