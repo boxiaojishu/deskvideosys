@@ -1,5 +1,5 @@
 <template>
-    <FormDlg title="传统桌面配置" @hide="onHide" @show="onShow" @submit="onSubmit" ref="dlg" :disabled="errors.any() || bLoading">     
+    <FormDlg title="桌面配置" @hide="onHide" @show="onShow" @submit="onSubmit" ref="dlg" :disabled="errors.any() || bLoading">     
          <div :class="['form-group', { 'has-error': errors.has('deskname')}]">
             <label for="input-desk-name" class="col-sm-3 control-label">桌面名称</label>
             <div class="col-sm-8">
