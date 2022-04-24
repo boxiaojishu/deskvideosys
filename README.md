@@ -24,7 +24,9 @@
 
 ## 安装部署
 
-- [下载解压 release 包](https://github.com/boxiaojishu/deskvideosys/releases)
+
+
+- [下载解压 版本包](http://www.cbrdesk.com/page74)
 
 - 直接运行(Windows)
 
