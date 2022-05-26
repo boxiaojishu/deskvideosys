@@ -53,9 +53,6 @@
 	打开浏览器输入 [http://localhost:10008](http://localhost:10008), 进入控制页面,默认用户名密码是admin/admin
 
 
-## 效果图
-
-
 ## 二次开发
 
 ### 准备工具
