@@ -40,11 +40,6 @@
     
     以 `Ctrl + C` 停止服务
 
-- 以服务启动(Windows)
-
-    ServiceInstall-deskvideosys.exe
-    
-    以 ServiceUninstall-deskvideosys.exe 卸载 deskvideosys 服务
 
 - 直接运行(Linux/macOS)
 
